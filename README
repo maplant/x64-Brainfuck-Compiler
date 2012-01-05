@@ -1,0 +1,23 @@
+bf.py
+A very simple, slightly optimized brainfuck compiler for x64.
+Reads from standard input and writes to standard output.
+
+By default, the stack size is set to 60000, which is twice the
+size used by the original implementation. This is because, unlike
+in the original implementation, the data pointer starts in the
+middle, rather than the beginning.
+
+Data is stored in the stack and initialized to 0 at runtime.
+
+Register assignments:
+%rdi          - the data pointer.
+%rsp and %rbp - stack and base pointers respectively, as per usual.
+
+Commands for assembling and linking output (may vary):
+as --64 -o prog.o prog.s
+ld -o prog prog.o
+
+Issues:
+I suck at assembler of all kinds, so this is all terrible. Joy!
+
+(C) 2011 Matthew Plant
